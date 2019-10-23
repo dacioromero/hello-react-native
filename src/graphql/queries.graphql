@@ -1,0 +1,18 @@
+fragment LanguageInfo on Language {
+  id: code
+  name
+}
+
+fragment CountryInfo on Country {
+  id: code
+  name
+  languages {
+    ...LanguageInfo
+  }
+}
+
+query Countries {
+  countries {
+    ...CountryInfo
+  }
+}
